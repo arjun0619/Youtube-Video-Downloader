@@ -1,34 +1,20 @@
-from pytube import YouTube
-import tkinter as tk
-from tkinter import filedialog
+from pytubefix import YouTube
 
-def ytdwn(url,save):
+def ytdwn(url):
     try:
         yt = YouTube(url)
         stream=yt.streams.filter(progressive=True,file_extension="mp4")
         highQuality=stream.get_highest_resolution()
-        highQuality.download(output_path=save)
+        highQuality.download()
+        print("The video downloaded")
 
     except Exception as e:
         print(e)
-
-def openFile():
-    folder = filedialog.askdirectory()
-    if folder:
-        print(f"Select folder : {folder}")
-    return folder
+        print("An unexpected error occured")
 
 
-if __name__ == "__main__":
-    root=tk.Tk()
-    root.withdraw()
-    
 
-    url=input("Enter the YouTube url : ")
-    save= openFile()
-    
-    if save:
-        print("Video Downloading....")        
-        ytdwn(url,save)
-    else:
-        print("Invalid Location")
+url = input("Enter the URL of the video")
+print("The video is downloading....")
+ytdwn(url)
+
