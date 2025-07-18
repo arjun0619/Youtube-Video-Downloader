@@ -3,8 +3,7 @@ This is a simple, beginner-friendly Python project. It allows users to download 
   
 🎮 How to Use  
 -> Make sure you have Python 3 installed.  
--> Install the required library using:  
-      pip install pytubefix  
+-> Install the required library using: pip install pytubefix  
 -> Run the Python script.  
 -> Enter the YouTube video URL.  
 -> The video will be downloaded.
